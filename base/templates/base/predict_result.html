@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>Wyniki predykcji</h1>
+
+<div class="alert alert-info">
+    Przewidywana ocena (basic model): <b>{{ pred1 }}</b>
+</div>
+
+<div class="alert alert-warning">
+    Przewidywana ocena (advanced model): <b>{{ pred2 }}</b>
+</div>
+
+<a href="{% url 'predict' %}" class="btn btn-success d-block mb-2">Oszacuj ponownie</a><br>
+<a href="{% static 'reports/pusty.pdf' %}" target="_blank" class="btn btn-secondary d-block">Porównanie modeli</a>
+
+{% endblock content %}
